@@ -21,10 +21,8 @@ addEventListener("resize", () => {
   canvas.width = innerWidth;
   canvas.height = innerHeight;
 
-  init();
+  // init();
 });
-
-// const colors = ["#355070", "#6D597A", "#B56576", "#E56B6F", "#EAAC8B"];
 
 function randomColor(colors) {
   return colors[Math.floor(Math.random() * colors.length)];
@@ -126,6 +124,7 @@ class Particle {
 
   update(particles) {
     this.draw();
+    
     for (let i = 0; i < particles.length; i++) {
       if (this === particles[i]) continue;
 
@@ -187,6 +186,7 @@ function animate() {
   // c.fillText("HTML CANVAS BOILERPLATE", mouse.x, mouse.y);
 
   particles.forEach((e) => {
+   
     e.update(particles);
   });
 }
