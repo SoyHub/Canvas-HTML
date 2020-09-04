@@ -155,13 +155,13 @@ class Particle {
 }
 
 // Implementation
-const numberOfCirlces = 50;
+const numberOfCirlces = 300;
 let particles;
 function init() {
   particles = [];
 
   for (let i = 0; i < numberOfCirlces; i++) {
-    const radius = 30;
+    const radius = 10;
     let x = randomIntFromRange(radius, canvas.width - radius);
     let y = randomIntFromRange(radius, canvas.height - radius);
     const color = randomColor(colors);
