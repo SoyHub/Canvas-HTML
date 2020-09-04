@@ -40,7 +40,7 @@ var player = new (function () {
     var angle = Math.atan2(p2 - 15 - this.y, this.x + 5 - this.x);
     this.y += this.ySpeed;
 
-    // this.rot -= this.rSpeed*0.1;
+  
     if (grounded) {
       this.rot -= (this.rot - angle) * 0.5;
       this.rSpeed = this.rSpeed - (angle - this.rot) - 0.01;
@@ -50,9 +50,7 @@ var player = new (function () {
       console.log("you lose");
      
     }
-    // console.log((angle > 0 ? angle : (2*Math.PI + angle)) * 360 / (2*Math.PI))
-    // console.log((this.rot - angle) * 0.5)
-    // console.log(grounded)
+
     this.rot -= this.rSpeed * 0.1;
     ctx.save();
     ctx.translate(this.x, this.y);
