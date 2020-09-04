@@ -5,4 +5,4 @@ https://codepen.io/soyhub/pen/BaKmBMV
 # Motorcycle game
 https://codepen.io/soyhub/pen/zYqPBBq
 # ShowCase Gallery
-sohayb-test-gallery.netlify.app
+https://sohayb-test-gallery.netlify.app/
