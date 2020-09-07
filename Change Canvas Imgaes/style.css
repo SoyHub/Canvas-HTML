@@ -19,7 +19,7 @@ canvas {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    width: 100%;
+    width: 50%;
     height: 75%;
     font-family: sans-serif;
   border-radius: 32px;
