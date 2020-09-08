@@ -27,8 +27,7 @@ canvas {
     width: 100%;
     height: 650px;
     font-family: sans-serif;
-  /* border-radius: 32px; */
-  /* z-index:-1; */
+ 
 }
 
 a{
@@ -55,7 +54,7 @@ a{
   font-size: 16px;
   margin-left: 20px;
   
-  /* z-index:1; */
+
 }
 .refresh{
   right: 52%;
@@ -80,8 +79,7 @@ a{
 }
 
 .subframe{
-  /* padding: 20px; */
-  /* padding-bottom: 100px; */
+
   border: 1px solid black;
   background-color: rgb(255, 255, 255);
   
