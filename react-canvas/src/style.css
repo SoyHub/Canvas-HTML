@@ -10,7 +10,7 @@ body{
     height: 100%;
     font-family: sans-serif;
 }
-#svgContainer {
+#svgmy-container {
   width: 400px;
   height: 400px;
   background-color: #a0a0a0;
@@ -43,8 +43,8 @@ a{
 
   right: 40%;
 
-  width: 70px;
-  display: inline-block;
+  width: 100px;
+  /* display: inline-block;
   border-radius: 25px;
   background-color: #ec9f33;
   color: #FFFFFF;
@@ -52,17 +52,17 @@ a{
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  margin-left: 20px;
+  margin-left: 20px; */
   
 
+}
+.my-btn:hover {
+  background-color: #fc9300;
 }
 .refresh{
   right: 52%;
 }
-.btn:hover {
-  background-color: #fc9300;
-}
-.container {
+.my-container {
   width: auto;
   position: relative;
   display: flex;
@@ -90,4 +90,25 @@ a{
 }
 #img-out{
   display: none;
+}
+#canvasNew{
+    position: relative;
+
+}
+ .modal-content{
+
+    width:1000px !important;
+    background-color: transparent !important;
+    position: relative;
+
+}
+#modalBody{
+    width:1000px !important;
+    position: relative;
+}
+.makeArt {
+    position: absolute;
+    bottom: -680px;
+    left: 220px;
+    z-index: 2;
 }

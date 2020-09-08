@@ -9,11 +9,13 @@ var stage;
 
 function Canvas() {
   const [lgShow, setLgShow] = useState(false);
-
+  const [href, sethref] = useState("");
+  const [download, setdownload] = useState("");
+  const [photo, setphoto] = useState("");
   useEffect(() => {
     init();
     return () => init();
-  }, [init, AddImage, handleImageLoad, getRandomInt]);
+  }, []);
 
   //INITIAL FUNCTION
   function init() {
@@ -22,8 +24,10 @@ function Canvas() {
 
     AddImage(PNG1);
     AddImage(PNG2);
+    AddImage(PNG2);
     AddImage(PNG3);
-    AddSVG(SVG1);
+    
+    // AddSVG(SVG1);
 
     stage.update();
   }
@@ -117,36 +121,40 @@ function Canvas() {
   }
   //Download
   function setDownload() {
-    document.getElementById("downloader").download =
-      "The Best Canvas In The World.png";
-    document.getElementById("downloader").href = document
-      .getElementById("canvasNew")
-      .toDataURL("image/png")
-      .replace(/^data:image\/[^;]/, "data:application/octet-stream");
-    document.getElementById("downloader").innerText = "Make Art!";
+    
+    setdownload("The Best Canvas In The World.png");
+    sethref(
+      document
+        .getElementById("canvasNew")
+        .toDataURL("image/png")
+        .replace(/^data:image\/[^;]/, "data:application/octet-stream")
+    );
   }
 
   function downloadMerged() {
     hideButtons();
-
+    console.log("downloadMerged Called");
     //PrintDiv
     window
       .html2canvas(document.querySelector("#frame"), {
         //styling
-        windowWidth: document.querySelector("#frame").scrollWidth,
+        windowWidth: document.querySelector("#frame").scrollWidth+100,
         windowHeight: document.querySelector("#frame").scrollHeight,
       })
       .then((canvas) => {
         canvas.id = "canvasNew";
-        canvas.style = "display:none";
+        // canvas.width="auto"
+        canvas.style = "";
         document.body.appendChild(canvas);
-        // console.log(canvas);
+        document.getElementById("modalBody").appendChild(canvas);
+        setphoto(canvas)
+       
 
         showButtons();
         setDownload();
 
         //Cleanout
-        document.body.removeChild(canvas);
+        // document.body.removeChild(canvas);
       });
   }
   //BUTTONS
@@ -161,22 +169,23 @@ function Canvas() {
 
   return (
     <>
-      
       <div id="frame" className="frame">
-        <h2 className="title">TESTO</h2>
+        <h2 className="title">LA TUA CANVAS</h2>
         <div className="subframe">
-          <div className="container">
+          <div className="my-container">
             <canvas id="canvas" width="1085" height="600"></canvas>
+            <MyModal
+              downloadFN={downloadMerged}
+              download={download}
+              href={href}
+              canvas={photo}
+            />
             <a
               href="##"
-              id="downloader"
-              className="btn"
-              onClick={downloadMerged}
+              id="refresher"
+              className="btn btn-warning rounded-pill refresh"
+              onClick={init}
             >
-              Confirm!
-            </a>
-            <MyModal />
-            <a href="##" id="refresher" className="btn refresh" onClick={init}>
               Refresh!
             </a>
           </div>
